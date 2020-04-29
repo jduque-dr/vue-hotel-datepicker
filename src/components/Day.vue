@@ -198,7 +198,6 @@ export default {
       this.createAllowedCheckoutDays(date);
     },
     'options.startDate': function(newVal, oldVal) {
-      console.log('day watch', newVal, oldVal);
       this.checkIfDisabled();
     },
   },
