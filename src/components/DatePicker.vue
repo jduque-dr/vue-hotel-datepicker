@@ -351,6 +351,7 @@
           this.createMonth(this.getNextMonth(new Date(newDate)));
         }
         this.parseDisabledDates();
+        console.log('months', this.months);
       },
     },
 
