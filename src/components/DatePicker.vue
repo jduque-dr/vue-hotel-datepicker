@@ -328,28 +328,28 @@
           this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn),
           this.getMonthDiff(newDate, this.checkIn)
         );
-        // if(this.checkIn &&
-        //   (this.getMonthDiff(this.getNextMonth(new Date(this.startDate)), this.checkIn) > 0 ||
-        //   this.getMonthDiff(this.startDate, this.checkIn) > 0)){
-        //     this.createMonth(new Date(this.startDate));
-        //     const count = this.getMonthDiff(this.startDate, this.checkIn)
-        //     let nextMonth = new Date(this.startDate)
-        //     for(let i = 0; i <= count; i++){
-        //       let tempNextMonth = this.getNextMonth(nextMonth)
-        //       this.createMonth(tempNextMonth)
-        //       nextMonth = tempNextMonth
-        //     }
-        //     if(this.checkOut && this.getMonthDiff(this.checkIn,this.checkOut) > 0){
-        //       this.createMonth(this.getNextMonth(nextMonth))
-        //       this.activeMonthIndex = 1
-        //     }
-        //     this.activeMonthIndex += count
-        // } else {
+        if(this.checkIn &&
+          (this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn) > 0 ||
+          this.getMonthDiff(newDate, this.checkIn) > 0)){
+            this.createMonth(new Date(newDate));
+            const count = this.getMonthDiff(newDate, this.checkIn)
+            let nextMonth = new Date(newDate)
+            for(let i = 0; i <= count; i++){
+              let tempNextMonth = this.getNextMonth(nextMonth)
+              this.createMonth(tempNextMonth)
+              nextMonth = tempNextMonth
+            }
+            if(this.checkOut && this.getMonthDiff(this.checkIn,this.checkOut) > 0){
+              this.createMonth(this.getNextMonth(nextMonth))
+              this.activeMonthIndex = 1
+            }
+            this.activeMonthIndex += count
+        } else {
 
           // const dt = '2020-08-10';
           this.createMonth(new Date(newDate));
           this.createMonth(this.getNextMonth(new Date(newDate)));
-        // }
+        }
         this.parseDisabledDates();
       },
     },
