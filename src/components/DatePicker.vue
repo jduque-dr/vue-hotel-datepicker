@@ -313,6 +313,7 @@
       },
       startDate(newDate, oldDate) {
         console.log('hola fork', newDate, oldDate);
+        this.months = [];
         if(this.checkIn &&
           (this.getMonthDiff(this.getNextMonth(new Date(this.startDate)), this.checkIn) > 0 ||
           this.getMonthDiff(this.startDate, this.checkIn) > 0)){
