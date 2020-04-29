@@ -331,8 +331,9 @@
         //     }
         //     this.activeMonthIndex += count
         // } else {
-          this.createMonth(new Date(newDate));
-          this.createMonth(this.getNextMonth(new Date(newDate)));
+          const dt = '2020-08-10';
+          this.createMonth(new Date(dt));
+          this.createMonth(this.getNextMonth(new Date(dt)));
         // }
         this.parseDisabledDates();
       },
