@@ -312,13 +312,13 @@
         this.$emit("check-out-changed", newDate)
       },
       startDate(newDate, oldDate) {
-        console.log('hola fork', newDate, oldDate);
+        console.log('hola fork', newDate, oldDate, newDate == oldDate);
         if (newDate == oldDate) {
           return;
         }
 
         this.months = [];
-        console.log(this.checkIn, this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn) );
+        console.log(this.checkIn, this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn), this.getMonthDiff(newDate, this.checkIn) );
         // if(this.checkIn &&
         //   (this.getMonthDiff(this.getNextMonth(new Date(this.startDate)), this.checkIn) > 0 ||
         //   this.getMonthDiff(this.startDate, this.checkIn) > 0)){
