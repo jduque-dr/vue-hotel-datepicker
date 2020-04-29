@@ -330,9 +330,9 @@
         //       this.activeMonthIndex = 1
         //     }
         //     this.activeMonthIndex += count
-        // }else{
-          this.createMonth(new Date(this.startDate));
-          this.createMonth(this.getNextMonth(new Date(this.startDate)));
+        // } else {
+          this.createMonth(new Date(newDate));
+          this.createMonth(this.getNextMonth(new Date(newDate)));
         // }
         this.parseDisabledDates();
       },
