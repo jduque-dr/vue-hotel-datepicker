@@ -35,7 +35,7 @@ config.plugins = (config.plugins || []).concat([
     compress: {
       warnings: false,
       drop_debugger: true,
-      drop_console: true,
+      drop_console: false,
       screw_ie8: true,
       global_defs: {
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
