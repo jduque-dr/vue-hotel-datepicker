@@ -311,48 +311,48 @@
 
         this.$emit("check-out-changed", newDate)
       },
-      startDate(newDate, oldDate) {
-        console.log(
-          'watch fork',
-          fecha.format(newDate, this.format),
-          fecha.format(oldDate, this.format),
-          fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)
-        );
+      // startDate(newDate, oldDate) {
+      //   console.log(
+      //     'watch fork',
+      //     fecha.format(newDate, this.format),
+      //     fecha.format(oldDate, this.format),
+      //     fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)
+      //   );
 
-        if (fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)) {
-          return;
-        }
+      //   if (fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)) {
+      //     return;
+      //   }
 
-        this.months = [];
-        console.log(this.checkIn,
-          this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn),
-          this.getMonthDiff(newDate, this.checkIn)
-        );
-        if(this.checkIn &&
-          (this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn) > 0 ||
-          this.getMonthDiff(newDate, this.checkIn) > 0)){
-            this.createMonth(new Date(newDate));
-            const count = this.getMonthDiff(newDate, this.checkIn)
-            let nextMonth = new Date(newDate)
-            for(let i = 0; i <= count; i++){
-              let tempNextMonth = this.getNextMonth(nextMonth)
-              this.createMonth(tempNextMonth)
-              nextMonth = tempNextMonth
-            }
-            if(this.checkOut && this.getMonthDiff(this.checkIn,this.checkOut) > 0){
-              this.createMonth(this.getNextMonth(nextMonth))
-              this.activeMonthIndex = 1
-            }
-            this.activeMonthIndex += count
-        } else {
+      //   this.months = [];
+      //   console.log(this.checkIn,
+      //     this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn),
+      //     this.getMonthDiff(newDate, this.checkIn)
+      //   );
+      //   if(this.checkIn &&
+      //     (this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn) > 0 ||
+      //     this.getMonthDiff(newDate, this.checkIn) > 0)){
+      //       this.createMonth(new Date(newDate));
+      //       const count = this.getMonthDiff(newDate, this.checkIn)
+      //       let nextMonth = new Date(newDate)
+      //       for(let i = 0; i <= count; i++){
+      //         let tempNextMonth = this.getNextMonth(nextMonth)
+      //         this.createMonth(tempNextMonth)
+      //         nextMonth = tempNextMonth
+      //       }
+      //       if(this.checkOut && this.getMonthDiff(this.checkIn,this.checkOut) > 0){
+      //         this.createMonth(this.getNextMonth(nextMonth))
+      //         this.activeMonthIndex = 1
+      //       }
+      //       this.activeMonthIndex += count
+      //   } else {
 
-          // const dt = '2020-08-10';
-          this.createMonth(new Date(newDate));
-          this.createMonth(this.getNextMonth(new Date(newDate)));
-        }
-        // this.parseDisabledDates();
-        console.log('months', this.months);
-      },
+      //     // const dt = '2020-08-10';
+      //     this.createMonth(new Date(newDate));
+      //     this.createMonth(this.getNextMonth(new Date(newDate)));
+      //   }
+      //   // this.parseDisabledDates();
+      //   console.log('months', this.months);
+      // },
     },
 
     methods: {
