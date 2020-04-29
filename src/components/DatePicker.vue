@@ -314,17 +314,20 @@
       startDate(newDate, oldDate) {
         console.log(
           'watch fork',
-          fecha.format(newDate, 'isoDateTime'),
-          fecha.format(oldDate, 'isoDateTime'),
-          fecha.format(newDate, 'isoDateTime') == fecha.format(oldDate, 'isoDateTime')
+          fecha.format(newDate, this.format),
+          fecha.format(oldDate, this.format),
+          fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)
         );
 
-        if (fecha.format(newDate, 'isoDateTime') == fecha.format(oldDate, 'isoDateTime')) {
+        if (fecha.format(newDate, this.format) == fecha.format(oldDate, this.format)) {
           return;
         }
 
         this.months = [];
-        console.log(this.checkIn, this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn), this.getMonthDiff(newDate, this.checkIn) );
+        console.log(this.checkIn,
+          this.getMonthDiff(this.getNextMonth(new Date(newDate)), this.checkIn),
+          this.getMonthDiff(newDate, this.checkIn)
+        );
         // if(this.checkIn &&
         //   (this.getMonthDiff(this.getNextMonth(new Date(this.startDate)), this.checkIn) > 0 ||
         //   this.getMonthDiff(this.startDate, this.checkIn) > 0)){
@@ -343,9 +346,9 @@
         //     this.activeMonthIndex += count
         // } else {
 
-          const dt = '2020-08-10';
-          this.createMonth(new Date(dt));
-          this.createMonth(this.getNextMonth(new Date(dt)));
+          // const dt = '2020-08-10';
+          this.createMonth(new Date(newDate));
+          this.createMonth(this.getNextMonth(new Date(newDate)));
         // }
         this.parseDisabledDates();
       },
