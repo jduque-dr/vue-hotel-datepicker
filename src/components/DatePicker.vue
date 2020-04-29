@@ -277,6 +277,7 @@
 
     watch: {
       isOpen(value) {
+        console.log('is open');
         if (this.screenSize !== 'desktop') {
           const bodyClassList = document.querySelector('body').classList;
 
@@ -546,6 +547,7 @@
       this.onElementHeightChange(document.body, () => {
         this.emitHeighChangeEvent();
       });
+      console.log('mounted from fork');
     },
 
     destroyed() {
