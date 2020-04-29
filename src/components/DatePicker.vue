@@ -295,7 +295,7 @@
       },
       checkIn(newDate, oldDate) {
         this.$emit("check-in-changed", newDate)
-        
+
       },
       checkOut(newDate, oldDate) {
 
@@ -310,7 +310,9 @@
 
         this.$emit("check-out-changed", newDate)
       },
-
+      startDate(newDate, oldDate) {
+        console.log('hola fork', newDate, oldDate);
+      },
     },
 
     methods: {
