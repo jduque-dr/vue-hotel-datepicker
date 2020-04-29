@@ -312,9 +312,14 @@
         this.$emit("check-out-changed", newDate)
       },
       startDate(newDate, oldDate) {
-        console.log('hola fork', newDate, oldDate, newDate == oldDate, format(newDate, 'isoDateTime') == format(oldDate, 'isoDateTime'));
+        console.log(
+          'watch fork',
+          fecha.format(newDate, 'isoDateTime'),
+          fecha.format(oldDate, 'isoDateTime'),
+          fecha.format(newDate, 'isoDateTime') == fecha.format(oldDate, 'isoDateTime')
+        );
 
-        if (format(newDate, 'isoDateTime') == format(oldDate, 'isoDateTime')) {
+        if (fecha.format(newDate, 'isoDateTime') == fecha.format(oldDate, 'isoDateTime')) {
           return;
         }
 
