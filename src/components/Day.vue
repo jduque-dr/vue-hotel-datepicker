@@ -198,7 +198,7 @@ export default {
       this.createAllowedCheckoutDays(date);
     },
     'options.startDate': function(newVal, oldVal) {
-      this.checkIfDisabled();
+      // this.checkIfDisabled();
     },
   },
 
