@@ -638,7 +638,7 @@
         position: absolute;
         z-index: 999;
 
-        button.next--mobile {
+        .next--mobile {
             background: none;
             border: 1px solid $light-gray;
             float: none;
