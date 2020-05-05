@@ -247,6 +247,10 @@
       displayClearButton: {
         default: true,
         type: Boolean,
+      },
+      isMultiple: {
+        default: false,
+        type: Boolean,
       }
     },
 
