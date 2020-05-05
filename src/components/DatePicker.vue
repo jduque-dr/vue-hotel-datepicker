@@ -457,6 +457,15 @@
         );
 
         this.activeMonthIndex++;
+
+        this.$nextTick(() => {
+          const lastElement = [...this.$el.getElementsByClassName('datepicker__month')].pop();
+
+          if (lastElement && window.matchMedia('(max-width: 768px)').matches) {
+            lastElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+
       }, 200),
 
       setCheckIn(date) {
