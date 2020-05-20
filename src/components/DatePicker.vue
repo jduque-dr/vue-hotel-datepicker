@@ -301,11 +301,11 @@
         this.$emit("check-in-changed", newDate)
 
       },
-      // startingDateValue(newDate, oldDate) {
-      //   if (newDate !== oldDate) {
-      //     this.checkIn = newDate;
-      //   }
-      // },
+      startingDateValue(newDate, oldDate) {
+        if (newDate !== oldDate) {
+          this.checkIn = newDate;
+        }
+      },
       checkOut(newDate, oldDate) {
 
         if (this.checkOut !== null && this.checkOut !== null) {
