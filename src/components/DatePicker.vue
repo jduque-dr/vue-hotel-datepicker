@@ -303,7 +303,7 @@
       },
       startingDateValue(newDate, oldDate) {
         if (newDate !== oldDate) {
-          this.checkIn = newDate;
+          this.$emit("check-in-changed", newDate)
         }
       },
       checkOut(newDate, oldDate) {
